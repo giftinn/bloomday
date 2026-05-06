@@ -16,7 +16,7 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f7f2e9;
+background:#f5ecec; /* soft warm nude */
 height:100vh;
 overflow:hidden;
 }
@@ -34,11 +34,11 @@ width:90%;
 max-width:420px;
 max-height:90vh;
 overflow:auto;
-background:#fff;
+background:#ffffff;
 border-radius:26px;
 padding:40px 32px;
 text-align:center;
-box-shadow:0 30px 70px rgba(0,0,0,.15);
+box-shadow:0 30px 70px rgba(80,0,20,.18); /* maroon shadow */
 opacity:0;
 transform:scale(.94) translateY(40px);
 transition:.7s cubic-bezier(.19,1,.22,1);
@@ -46,7 +46,7 @@ pointer-events:none;
 }
 
 .card::-webkit-scrollbar{width:6px}
-.card::-webkit-scrollbar-thumb{background:#e8b4bc;border-radius:10px}
+.card::-webkit-scrollbar-thumb{background:#7a1e2c;border-radius:10px}
 
 .card.active{
 opacity:1;
@@ -57,15 +57,17 @@ pointer-events:auto;
 h1,h2{
 font-family:'DM Serif Display',serif;
 margin:0 0 14px;
+color:#6d0f1a;
 }
 
-p{font-size:15px;line-height:1.7;opacity:.85}
+p{font-size:15px;line-height:1.7;opacity:.85;color:#4a2a2e}
 
 button{
 padding:12px 26px;
 border:none;
 border-radius:999px;
-background:#e8b4bc;
+background:#7a1e2c; /* maroon utama */
+color:white;
 cursor:pointer;
 margin-top:18px;
 font-size:15px;
@@ -73,7 +75,7 @@ transition:.25s;
 }
 button:hover{
 transform:scale(1.05);
-box-shadow:0 10px 25px rgba(232,180,188,.4);
+box-shadow:0 10px 25px rgba(122,30,44,.4);
 }
 
 /* PIN */
@@ -87,9 +89,9 @@ margin:25px 0;
 width:18px;
 height:18px;
 border-radius:50%;
-border:2px solid #e8b4bc;
+border:2px solid #7a1e2c;
 }
-.dot.fill{background:#e8b4bc}
+.dot.fill{background:#7a1e2c}
 
 .keypad{
 display:grid;
@@ -110,14 +112,16 @@ gap:12px;
 margin-top:20px;
 }
 #options button{
-background:#f7f2e9;
-border:1px solid #e8b4bc;
+background:#f5ecec;
+border:1px solid #7a1e2c;
+color:#6d0f1a;
 }
 
 .score-box{
 margin-top:22px;
 font-size:15px;
 letter-spacing:.5px;
+color:#6d0f1a;
 }
 
 #feedback{
@@ -127,10 +131,11 @@ font-size:14px;
 transition:.3s;
 }
 
+/* Correct / Wrong tetap lembut */
 .correctAnim{
 animation:pop .4s ease;
-background:#c7f5d9 !important;
-border-color:#8ee6b2 !important;
+background:#d4f3e2 !important;
+border-color:#9de0c0 !important;
 }
 @keyframes pop{
 0%{transform:scale(.9)}
@@ -140,8 +145,8 @@ border-color:#8ee6b2 !important;
 
 .wrongAnim{
 animation:shake .4s;
-background:#ffd6d6 !important;
-border-color:#ff9b9b !important;
+background:#ffe0e0 !important;
+border-color:#ffb3b3 !important;
 }
 
 @keyframes shake{
@@ -152,25 +157,26 @@ border-color:#ff9b9b !important;
 
 /* TIMER */
 .lovebox{
-background:linear-gradient(145deg,#fff,#fdecef);
+background:linear-gradient(145deg,#ffffff,#f3d6da);
 border-radius:22px;
 padding:20px;
 margin-bottom:25px;
-box-shadow:0 12px 35px rgba(232,180,188,.25);
-border:1px solid rgba(232,180,188,.25);
+box-shadow:0 12px 35px rgba(122,30,44,.25);
+border:1px solid rgba(122,30,44,.25);
 }
 
 .timer-title{
 font-size:12px;
 letter-spacing:2px;
 opacity:.6;
+color:#6d0f1a;
 }
 
 .timer-display{
 font-family:'DM Serif Display',serif;
 font-size:28px;
 margin-top:8px;
-color:#c97d88;
+color:#7a1e2c;
 letter-spacing:1px;
 animation:pulse 2.5s infinite;
 }
@@ -184,9 +190,9 @@ display:flex;
 align-items:center;
 justify-content:center;
 border-radius:20px;
-border:2px dashed #e8b4bc;
+border:2px dashed #7a1e2c;
 cursor:pointer;
-background:#fff8f9;
+background:#fff5f6;
 transition:.3s;
 }
 .reveal-box:hover{transform:scale(1.02)}
@@ -199,7 +205,7 @@ font-size:18px;
 line-height:1.3;
 letter-spacing:.4px;
 text-align:left;
-color:black;
+color:#3a1b1f;
 opacity:.95;
 min-height:100px;
 animation:fadeInText 1.2s ease;
@@ -211,7 +217,7 @@ text-align:right;
 font-family:'Playfair Display',serif;
 font-size:20px;
 letter-spacing:1px;
-color:#b07c83;
+color:#7a1e2c;
 animation:fadeInText 1.8s ease;
 }
 
@@ -240,8 +246,8 @@ pointer-events:none;
 
 <!-- welcome -->
 <section class="card active">
-<h1>Special gift</h1>
-<p>For someone i love the most. <br>But you have to unlock it.</p>
+<h1>Hi, birthday girl! </h1>
+<p>You got some letters.<br>But you have to unlock it.</p>
 <button onclick="next()">Unlock</button>
 </section>
 
@@ -282,7 +288,7 @@ Points: <span id="score">0</span> / 3
 <!-- final -->
 <section class="card">
 
-<h1>Another Month of Us</h1>
+<h1>A's day!</h1>
 
 <div class="lovebox">
 <div class="timer-title">TIME WITH YOU</div>
@@ -336,7 +342,7 @@ if(page===2)loadQuestion();
 ================================================= */
 
 let pinInput = '';
-const correctPin = '1402';
+const correctPin = '0704';
 const pinDisplay = document.getElementById("pin");
 
 function renderDots(){
@@ -384,9 +390,9 @@ function checkPin(){
 ================================================= */
 
 const questions=[
-{q:"When did we first meet? ", options:["14 February"," 24 January","22 January"],correct:2},
-{q:"Who loves the most?", options:["You","100% me","Both"],correct:2},
-{q:"What’s on my mind most of the time?", options:["Anime","Someone else","You (my pretty girlfriend"],correct:2}
+{q:"Today's date?", options:["14 February 2026","07 May 2026","22 January 2025"],correct:1},
+{q:"Is it someone's special day?", options:["Yes! :3","i don't know","maybe no?"],correct:0},
+{q:"Who that person might be? ", options:["idgaf","Someone else","It's.. me?"],correct:2}
 ];
 
 let currentQ = 0;
@@ -451,7 +457,7 @@ function checkAnswer(i,btn){
 
 function startTimer(){
 
-    const start = new Date("2026-01-22T00:00:00");
+    const start = new Date("2026-05-07T00:00:00");
 
     setInterval(()=>{
 
@@ -485,11 +491,11 @@ function revealMemory(el){
     `;
 
     const text = `
-      Even all the beautiful words in the world still wouldn’t be enough to explain how much you mean to me. Yet here you are, right in my life, and somehow that alone says everything. I admire the little things about you—the way you care about me, the way you talk, and how your eyes light up when you’re excited, especially when it’s with me. 
-
-      With you, I’ve found a kind of peace I didn’t even know I was looking for. It’s a kind of comfort I didn’t know I needed until I found it in you. It’s something I can’t find anywhere else, no matter how hard I try. Every moment with you, no matter how small, feels important and meaningful.
-      
-      Thank you for being here with me, for every moment, every word, and every feeling we’ve shared. Happy 2nd mensiversary, sayangku. I’m so grateful for you, today and always. ❤️  
+        To my beloved one, my forever soulmate, Adis.
+        
+        Happy Birthday! On your special day, let me convey my best saying and prayers for you :3. The years you have gone through previously have given you so many experiences, from joys until sorrows, and that things is what will be the provision to shape you into the best version of yourself. My prayer for you, may in your new age, may you be fulfilled with success in every step you take, health that is always maintained, and surrounded by people who always love you (like me :p). May God soon grant all your dreams, aspirations, and hopes. May you always find happiness in every journey of your life. May this year be your best year. And may the next days, your smiles shining brightly just like always.
+        
+        Just know, I'm truly impressed by everything you have been through in your life. Starting from you who have successfully passed difficult times that once seemed impossible to overcome. Until you who have managed to overcome all the obstacles and barriers that had time hit your life so far. Really, that things is truly an achievement that is very much worthy of appreciation. And I hope this year, there are no more hard times or obstacles that you have to go through. Instead, may your life this year always be blessed with many good things without stopping. I hope, today will be one of the beautiful days that you will always remember in the heart. And I hope, on this day you will be enveloped by much love and affection from all the inhabitants of the earth. Lastly, please know, I love you to the moon and back, in every lifetimes. Happy birthday, beautiful soul <3!
       `;
 
     const paragraphs = text.trim().split(/\n\s*\n/);
